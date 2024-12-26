@@ -15,6 +15,8 @@ const CustomInput = ({
       error={error}
       disabled={disabled}
       style={[styles.input, style]}
+      outlineStyle={styles.outline}
+      contentStyle={styles.content}
       {...props}
     />
   );
@@ -22,9 +24,16 @@ const CustomInput = ({
 
 const styles = StyleSheet.create({
   input: {
-    marginVertical: 8,
     backgroundColor: 'white',
+  },
+  outline: {
+    borderRadius: 8,
+  },
+  content: {
+    paddingHorizontal: 14,
+    paddingVertical: 12,
   },
 });
 
+CustomInput.Icon = TextInput.Icon;
 export default CustomInput;

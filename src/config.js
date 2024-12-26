@@ -1,4 +1,4 @@
-export const API_URL = 'http://localhost:5000/api';
+export const API_URL = 'http://10.0.2.2:5000/api';
 
 export const MEDICINE_CATEGORIES = [
   { label: 'Tablet', value: 'tablet' },
@@ -11,6 +11,7 @@ export const MEDICINE_CATEGORIES = [
 export const DONATION_STATUS = {
   PENDING: 'pending',
   ACCEPTED: 'accepted',
+  REJECTED: 'rejected',
   COLLECTED: 'collected',
   COMPLETED: 'completed',
   CANCELLED: 'cancelled',

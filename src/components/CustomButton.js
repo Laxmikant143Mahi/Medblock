@@ -10,6 +10,7 @@ const CustomButton = ({
   disabled = false,
   children,
   style,
+  compact = false,
   ...props
 }) => {
   const theme = useTheme();
@@ -20,8 +21,13 @@ const CustomButton = ({
       onPress={onPress}
       loading={loading}
       disabled={disabled}
-      style={[styles.button, style]}
-      labelStyle={styles.label}
+      style={[
+        styles.button,
+        mode === 'contained' && { backgroundColor: theme.colors.primary },
+        compact && styles.compact,
+        style,
+      ]}
+      labelStyle={[styles.label, compact && styles.compactLabel]}
       {...props}
     >
       {children}
@@ -32,12 +38,18 @@ const CustomButton = ({
 const styles = StyleSheet.create({
   button: {
     borderRadius: 8,
-    paddingVertical: 8,
-    marginVertical: 8,
   },
   label: {
+    paddingVertical: 8,
     fontSize: 16,
     fontWeight: '600',
+  },
+  compact: {
+    marginHorizontal: -8,
+  },
+  compactLabel: {
+    paddingVertical: 4,
+    fontSize: 14,
   },
 });
 

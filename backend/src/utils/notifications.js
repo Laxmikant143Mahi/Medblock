@@ -110,7 +110,7 @@ const sendDonationNotification = async (donation, type) => {
                     <p>The medicines have been successfully collected.</p>
                 `;
                 break;
-            // Add more cases as needed
+            // To add more cases 
         }
 
         if (message) {
