@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, ScrollView, Alert } from 'react-native';
 import { Text, Card, Avatar, Searchbar, Portal, Modal, useTheme, List } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import CustomButton from '../../components/CustomButton';
 import LoadingScreen from '../../components/LoadingScreen';
-import { updateUserRole, deleteUser } from '../../store/slices/userSlice';
+import { fetchUsers, updateUserRole, deleteUser } from '../../store/slices/userSlice';
 
 const UserCard = ({ user, onRoleChange, onDelete }) => {
   const theme = useTheme();

@@ -3,12 +3,12 @@ import { StyleSheet, View, ScrollView, Alert } from 'react-native';
 import { Text, FAB, Portal, Modal, Searchbar, useTheme } from 'react-native-paper';
 import { useDispatch, useSelector } from 'react-redux';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import DateTimePicker from '@react-native-community/datetimepicker';
 
 import CustomInput from '../components/CustomInput';
 import CustomButton from '../components/CustomButton';
 import MedicineCard from '../components/MedicineCard';
 import LoadingScreen from '../components/LoadingScreen';
+import DateTimePickerWeb from '../components/DateTimePickerWeb';
 import { addToCabinet } from '../store/slices/medicineSlice';
 
 const CabinetScreen = ({ route, navigation }) => {
@@ -129,10 +129,8 @@ const CabinetScreen = ({ route, navigation }) => {
             Expiry Date: {expiryDate.toLocaleDateString()}
           </CustomButton>
           {showDatePicker && (
-            <DateTimePicker
+            <DateTimePickerWeb
               value={expiryDate}
-              mode="date"
-              display="default"
               onChange={handleDateChange}
               minimumDate={new Date()}
             />
